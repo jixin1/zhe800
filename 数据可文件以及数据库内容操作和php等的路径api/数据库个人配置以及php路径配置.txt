@@ -1,0 +1,27 @@
+数据库问题
+$conn=@mysql_connect('','root','');  连接数据库php文件的配置   连接名称为空，用户名为root，密码为空；
+
+<?php
+header('content-type:text/html;charset=utf-8');
+$conn=@mysql_connect('','root','');
+if(!$conn){
+    die('数据库连接错误:'.mysql_error());
+}
+mysql_select_db('zhe800product');
+mysql_query('SET NAMES UTF8');
+?>
+
+数据库的名字为zhe800product
+里面有两个表productinformation和zhe800user
+
+第一个productinformation.sql数据库文件为总的包含了productinformation和zhe800user表
+如果第一个总的文件导入失败或异常，请用分文件导入zhe800product.sql和zhe800user.sql文件为各个表导出的的sql文件
+
+
+路径问题
+http://10.31.161.11/zhe800/projectname/php/php文件    js内php的路径为这个   
+在服务器运行项目请在c盘的www文件夹下新建一个zhe800目录
+在www目录的zhe800文件夹下
+把projectname目录文件放在www目录的zhe800文件夹下
+也可以把“二阶段电商项目zhe800”文件更改为zhe800然后放在服务器的www目录下
+http://10.31.161.11/zhe800/projectname/src/cart.html其他跳转路径都是基于src的路径这种形式的，可能在dist目录单独运行路径会有错（已更改）
